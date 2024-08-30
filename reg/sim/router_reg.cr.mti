@@ -1,0 +1,15 @@
+{C:/Users/T Rahul/Advanced VLSI Design and Verification/project/reg/rtl/router_reg.v} {1 {vlog -work work -stats=none {C:\Users\T Rahul\Advanced VLSI Design and Verification\project\reg\rtl\router_reg.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module router_reg
+
+Top level modules:
+	router_reg
+
+} {} {}} {C:/Users/T Rahul/Advanced VLSI Design and Verification/project/reg/rtl/router_reg_tb.v} {1 {vlog -work work -stats=none {C:\Users\T Rahul\Advanced VLSI Design and Verification\project\reg\rtl\router_reg_tb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module router_reg_tb
+
+Top level modules:
+	router_reg_tb
+
+} {} {}}
