@@ -1,0 +1,411 @@
+Analysis & Synthesis report for router_top
+Tue May 24 00:16:09 2022
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |router_top|router_fsm:FSM|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: router_fsm:FSM
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue May 24 00:16:09 2022       ;
+; Quartus Prime Version       ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name               ; router_top                                  ;
+; Top-level Entity Name       ; router_top                                  ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 1,272                                       ;
+; Total pins                  ; 43                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; router_top         ; router_top         ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                          ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------+---------+
+; ../../reg/rtl/router_reg.v       ; yes             ; User Verilog HDL File  ; C:/Users/T Rahul/Advanced VLSI Design and Verification/project/reg/rtl/router_reg.v   ;         ;
+; ../../fsm/rtl/router_fsm.v       ; yes             ; User Verilog HDL File  ; C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v   ;         ;
+; ../../sync/rtl/router_sync.v     ; yes             ; User Verilog HDL File  ; C:/Users/T Rahul/Advanced VLSI Design and Verification/project/sync/rtl/router_sync.v ;         ;
+; ../../fifo/router_fifo.v         ; yes             ; User Verilog HDL File  ; C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fifo/router_fifo.v     ;         ;
+; ../rtl/router_top.v              ; yes             ; User Verilog HDL File  ; C:/Users/T Rahul/Advanced VLSI Design and Verification/project/top/rtl/router_top.v   ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 1272  ;
+;     -- Combinational with no register       ; 717   ;
+;     -- Register only                        ; 459   ;
+;     -- Combinational with a register        ; 96    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 630   ;
+;     -- 3 input functions                    ; 82    ;
+;     -- 2 input functions                    ; 88    ;
+;     -- 1 input functions                    ; 13    ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 1218  ;
+;     -- arithmetic mode                      ; 54    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 112   ;
+;     -- asynchronous clear/load mode         ; 8     ;
+;                                             ;       ;
+; Total registers                             ; 555   ;
+; Total logic cells in carry chains           ; 66    ;
+; I/O pins                                    ; 43    ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 555   ;
+; Total fan-out                               ; 4725  ;
+; Average fan-out                             ; 3.59  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                           ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name            ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------+-------------+--------------+
+; |router_top                ; 1272 (0)    ; 555          ; 0          ; 43   ; 0            ; 717 (0)      ; 459 (0)           ; 96 (0)           ; 66 (0)          ; 0 (0)      ; |router_top                    ; router_top  ; work         ;
+;    |router_fifo:FIFO_0|    ; 382 (382)   ; 161          ; 0          ; 0    ; 0            ; 221 (221)    ; 144 (144)         ; 17 (17)          ; 17 (17)         ; 0 (0)      ; |router_top|router_fifo:FIFO_0 ; router_fifo ; work         ;
+;    |router_fifo:FIFO_1|    ; 375 (375)   ; 161          ; 0          ; 0    ; 0            ; 214 (214)    ; 144 (144)         ; 17 (17)          ; 17 (17)         ; 0 (0)      ; |router_top|router_fifo:FIFO_1 ; router_fifo ; work         ;
+;    |router_fifo:FIFO_2|    ; 377 (377)   ; 162          ; 0          ; 0    ; 0            ; 215 (215)    ; 145 (145)         ; 17 (17)          ; 17 (17)         ; 0 (0)      ; |router_top|router_fifo:FIFO_2 ; router_fifo ; work         ;
+;    |router_fsm:FSM|        ; 24 (24)     ; 8            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |router_top|router_fsm:FSM     ; router_fsm  ; work         ;
+;    |router_reg:REG|        ; 82 (82)     ; 43           ; 0          ; 0    ; 0            ; 39 (39)      ; 24 (24)           ; 19 (19)          ; 0 (0)           ; 0 (0)      ; |router_top|router_reg:REG     ; router_reg  ; work         ;
+;    |router_sync:SYNC|      ; 32 (32)     ; 20           ; 0          ; 0    ; 0            ; 12 (12)      ; 2 (2)             ; 18 (18)          ; 15 (15)         ; 0 (0)      ; |router_top|router_sync:SYNC   ; router_sync ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------+
+; State Machine - |router_top|router_fsm:FSM|state                                                       ;
++-----------+-----------+-----------+-----------+-----------+----------+----------+-----------+----------+
+; Name      ; state.CPE ; state.WTE ; state.LAF ; state.FFS ; state.LP ; state.LD ; state.LFD ; state.DA ;
++-----------+-----------+-----------+-----------+-----------+----------+----------+-----------+----------+
+; state.DA  ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0         ; 0        ;
+; state.LFD ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 1         ; 1        ;
+; state.LD  ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ; 0         ; 1        ;
+; state.LP  ; 0         ; 0         ; 0         ; 0         ; 1        ; 0        ; 0         ; 1        ;
+; state.FFS ; 0         ; 0         ; 0         ; 1         ; 0        ; 0        ; 0         ; 1        ;
+; state.LAF ; 0         ; 0         ; 1         ; 0         ; 0        ; 0        ; 0         ; 1        ;
+; state.WTE ; 0         ; 1         ; 0         ; 0         ; 0        ; 0        ; 0         ; 1        ;
+; state.CPE ; 1         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0         ; 1        ;
++-----------+-----------+-----------+-----------+-----------+----------+----------+-----------+----------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++---------------------------------------+-----------------------------------------+
+; Register name                         ; Reason for Removal                      ;
++---------------------------------------+-----------------------------------------+
+; router_fifo:FIFO_0|temp_lfd           ; Merged with router_fifo:FIFO_2|temp_lfd ;
+; router_fifo:FIFO_1|temp_lfd           ; Merged with router_fifo:FIFO_2|temp_lfd ;
+; router_fsm:FSM|state~4                ; Lost fanout                             ;
+; router_fsm:FSM|state~5                ; Lost fanout                             ;
+; router_fsm:FSM|state~6                ; Lost fanout                             ;
+; Total Number of Removed Registers = 5 ;                                         ;
++---------------------------------------+-----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 555   ;
+; Number of registers using Synchronous Clear  ; 112   ;
+; Number of registers using Synchronous Load   ; 29    ;
+; Number of registers using Asynchronous Clear ; 8     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 525   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_reg:REG|hb[2]                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_reg:REG|pp[3]                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_reg:REG|ffs[4]               ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|rd_ptr[1]        ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|rd_ptr[2]        ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|rd_ptr[3]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[15][1]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[14][4]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[13][6]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[12][0]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[11][7]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[10][6]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[9][7]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[8][7]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[7][7]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[6][7]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[5][0]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[4][0]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[3][0]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[2][7]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[1][4]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|mem[0][4]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[15][1]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[14][0]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[13][5]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[12][5]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[11][7]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[10][3]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[9][5]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[8][0]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[7][7]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[6][6]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[5][5]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[4][1]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[3][4]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[2][5]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[1][6]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|mem[0][1]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[15][1]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[14][3]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[13][6]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[12][6]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[11][4]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[10][5]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[9][3]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[8][1]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[7][1]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[6][5]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[5][6]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[4][6]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[3][0]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[2][3]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[1][4]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|mem[0][2]        ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |router_top|router_fifo:FIFO_0|wr_ptr[2]        ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |router_top|router_fifo:FIFO_1|wr_ptr[0]        ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |router_top|router_fifo:FIFO_2|wr_ptr[2]        ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |router_top|router_reg:REG|ip[6]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |router_top|router_reg:REG|dout[1]              ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |router_top|router_sync:SYNC|count_rst0[0]      ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |router_top|router_sync:SYNC|count_rst1[0]      ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |router_top|router_sync:SYNC|count_rst2[0]      ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|counter[3]       ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|counter[5]       ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|counter[6]       ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_0|data_out[6]~reg0 ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_1|data_out[0]~reg0 ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |router_top|router_fifo:FIFO_2|data_out[0]~reg0 ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; No         ; |router_top|router_fifo:FIFO_0|mem              ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; No         ; |router_top|router_fifo:FIFO_1|mem              ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; No         ; |router_top|router_fifo:FIFO_2|mem              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: router_fsm:FSM ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; DA             ; 000   ; Unsigned Binary                    ;
+; LFD            ; 001   ; Unsigned Binary                    ;
+; LD             ; 010   ; Unsigned Binary                    ;
+; LP             ; 011   ; Unsigned Binary                    ;
+; FFS            ; 100   ; Unsigned Binary                    ;
+; LAF            ; 101   ; Unsigned Binary                    ;
+; WTE            ; 110   ; Unsigned Binary                    ;
+; CPE            ; 111   ; Unsigned Binary                    ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Tue May 24 00:15:49 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off router_top -c router_top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/t rahul/advanced vlsi design and verification/project/reg/rtl/router_reg.v
+    Info (12023): Found entity 1: router_reg File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/reg/rtl/router_reg.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/t rahul/advanced vlsi design and verification/project/fsm/rtl/router_fsm.v
+    Info (12023): Found entity 1: router_fsm File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/t rahul/advanced vlsi design and verification/project/sync/rtl/router_sync.v
+    Info (12023): Found entity 1: router_sync File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/sync/rtl/router_sync.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/t rahul/advanced vlsi design and verification/project/fifo/router_fifo.v
+    Info (12023): Found entity 1: router_fifo File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fifo/router_fifo.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/t rahul/advanced vlsi design and verification/project/top/rtl/router_top.v
+    Info (12023): Found entity 1: router_top File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/top/rtl/router_top.v Line: 1
+Info (12127): Elaborating entity "router_top" for the top level hierarchy
+Info (12128): Elaborating entity "router_fifo" for hierarchy "router_fifo:FIFO_0" File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/top/rtl/router_top.v Line: 27
+Warning (10230): Verilog HDL assignment warning at router_fifo.v(36): truncated value with size 32 to match size of target (5) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fifo/router_fifo.v Line: 36
+Warning (10230): Verilog HDL assignment warning at router_fifo.v(77): truncated value with size 32 to match size of target (5) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fifo/router_fifo.v Line: 77
+Warning (10230): Verilog HDL assignment warning at router_fifo.v(100): truncated value with size 32 to match size of target (7) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fifo/router_fifo.v Line: 100
+Warning (10230): Verilog HDL assignment warning at router_fifo.v(111): truncated value with size 32 to match size of target (7) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fifo/router_fifo.v Line: 111
+Info (12128): Elaborating entity "router_sync" for hierarchy "router_sync:SYNC" File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/top/rtl/router_top.v Line: 80
+Warning (10230): Verilog HDL assignment warning at router_sync.v(79): truncated value with size 32 to match size of target (5) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/sync/rtl/router_sync.v Line: 79
+Warning (10230): Verilog HDL assignment warning at router_sync.v(130): truncated value with size 32 to match size of target (5) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/sync/rtl/router_sync.v Line: 130
+Warning (10230): Verilog HDL assignment warning at router_sync.v(181): truncated value with size 32 to match size of target (5) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/sync/rtl/router_sync.v Line: 181
+Info (12128): Elaborating entity "router_fsm" for hierarchy "router_fsm:FSM" File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/top/rtl/router_top.v Line: 107
+Warning (10240): Verilog HDL Always Construct warning at router_fsm.v(33): inferring latch(es) for variable "next_state", which holds its previous value in one or more paths through the always construct File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Info (10041): Inferred latch for "next_state.CPE" at router_fsm.v(33) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Info (10041): Inferred latch for "next_state.WTE" at router_fsm.v(33) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Info (10041): Inferred latch for "next_state.LAF" at router_fsm.v(33) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Info (10041): Inferred latch for "next_state.FFS" at router_fsm.v(33) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Info (10041): Inferred latch for "next_state.LP" at router_fsm.v(33) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Info (10041): Inferred latch for "next_state.LD" at router_fsm.v(33) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Info (10041): Inferred latch for "next_state.LFD" at router_fsm.v(33) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Info (10041): Inferred latch for "next_state.DA" at router_fsm.v(33) File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Info (12128): Elaborating entity "router_reg" for hierarchy "router_reg:REG" File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/top/rtl/router_top.v Line: 125
+Warning (14026): LATCH primitive "router_fsm:FSM|next_state.LAF_262" is permanently enabled File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Warning (14026): LATCH primitive "router_fsm:FSM|next_state.WTE_249" is permanently enabled File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Warning (14026): LATCH primitive "router_fsm:FSM|next_state.FFS_275" is permanently enabled File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Warning (14026): LATCH primitive "router_fsm:FSM|next_state.LP_288" is permanently enabled File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Warning (14026): LATCH primitive "router_fsm:FSM|next_state.LD_301" is permanently enabled File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Warning (14026): LATCH primitive "router_fsm:FSM|next_state.LFD_314" is permanently enabled File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Warning (14026): LATCH primitive "router_fsm:FSM|next_state.DA_327" is permanently enabled File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Warning (14026): LATCH primitive "router_fsm:FSM|next_state.CPE_236" is permanently enabled File: C:/Users/T Rahul/Advanced VLSI Design and Verification/project/fsm/rtl/router_fsm.v Line: 33
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 1315 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 1272 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 4706 megabytes
+    Info: Processing ended: Tue May 24 00:16:09 2022
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:29
+
+

@@ -1,0 +1,11 @@
+
+State Machine - |router_top|router_fsm:FSM|state
+Name state.CPE state.WTE state.LAF state.FFS state.LP state.LD state.LFD state.DA 
+state.DA 0 0 0 0 0 0 0 0 
+state.LFD 0 0 0 0 0 0 1 1 
+state.LD 0 0 0 0 0 1 0 1 
+state.LP 0 0 0 0 1 0 0 1 
+state.FFS 0 0 0 1 0 0 0 1 
+state.LAF 0 0 1 0 0 0 0 1 
+state.WTE 0 1 0 0 0 0 0 1 
+state.CPE 1 0 0 0 0 0 0 1 

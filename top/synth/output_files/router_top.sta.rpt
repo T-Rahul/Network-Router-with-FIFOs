@@ -1,0 +1,572 @@
+TimeQuest Timing Analyzer report for router_top
+Tue May 24 00:16:25 2022
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clock'
+ 12. Hold: 'clock'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; router_top                                          ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M2210ZF256C4                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 92.61 MHz ; 92.61 MHz       ; clock      ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -9.798 ; -4567.466     ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 1.348 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clock'                                                                                                                              ;
++--------+------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                    ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; -9.798 ; router_fifo:FIFO_1|mem[1][3] ; router_fifo:FIFO_1|mem[12][3] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.527     ;
+; -9.796 ; router_fifo:FIFO_1|mem[1][3] ; router_fifo:FIFO_1|mem[8][3]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.525     ;
+; -9.782 ; router_fifo:FIFO_1|rd_ptr[0] ; router_reg:REG|dout[7]        ; clock        ; clock       ; 1.000        ; 0.000      ; 10.511     ;
+; -9.720 ; router_fifo:FIFO_1|mem[1][3] ; router_fifo:FIFO_1|mem[0][3]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.449     ;
+; -9.717 ; router_fifo:FIFO_1|mem[1][3] ; router_fifo:FIFO_1|mem[4][3]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.446     ;
+; -9.684 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[12][5] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.413     ;
+; -9.682 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[0][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.411     ;
+; -9.661 ; router_fifo:FIFO_2|wr_ptr[1] ; router_fifo:FIFO_2|mem[2][2]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.390     ;
+; -9.655 ; router_fifo:FIFO_2|wr_ptr[1] ; router_fifo:FIFO_2|mem[1][2]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.384     ;
+; -9.648 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[8][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.377     ;
+; -9.647 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[15][5] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.376     ;
+; -9.646 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[4][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.375     ;
+; -9.642 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[3][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.371     ;
+; -9.634 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[2][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.363     ;
+; -9.632 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[1][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.361     ;
+; -9.631 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[11][0] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.360     ;
+; -9.622 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[6][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.351     ;
+; -9.618 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[7][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.347     ;
+; -9.616 ; router_fifo:FIFO_1|rd_ptr[0] ; router_reg:REG|ip[4]          ; clock        ; clock       ; 1.000        ; 0.000      ; 10.345     ;
+; -9.613 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[4][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.342     ;
+; -9.605 ; router_fifo:FIFO_2|wr_ptr[1] ; router_fifo:FIFO_2|mem[13][6] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.334     ;
+; -9.604 ; router_fifo:FIFO_1|rd_ptr[0] ; router_reg:REG|dout[2]        ; clock        ; clock       ; 1.000        ; 0.000      ; 10.333     ;
+; -9.604 ; router_fifo:FIFO_1|rd_ptr[0] ; router_reg:REG|dout[0]        ; clock        ; clock       ; 1.000        ; 0.000      ; 10.333     ;
+; -9.604 ; router_fifo:FIFO_1|rd_ptr[0] ; router_reg:REG|dout[3]        ; clock        ; clock       ; 1.000        ; 0.000      ; 10.333     ;
+; -9.604 ; router_fifo:FIFO_1|rd_ptr[0] ; router_reg:REG|dout[4]        ; clock        ; clock       ; 1.000        ; 0.000      ; 10.333     ;
+; -9.604 ; router_fifo:FIFO_1|rd_ptr[0] ; router_reg:REG|dout[5]        ; clock        ; clock       ; 1.000        ; 0.000      ; 10.333     ;
+; -9.604 ; router_fifo:FIFO_1|rd_ptr[0] ; router_reg:REG|dout[6]        ; clock        ; clock       ; 1.000        ; 0.000      ; 10.333     ;
+; -9.604 ; router_fifo:FIFO_1|rd_ptr[0] ; router_reg:REG|dout[1]        ; clock        ; clock       ; 1.000        ; 0.000      ; 10.333     ;
+; -9.601 ; router_fifo:FIFO_2|wr_ptr[1] ; router_fifo:FIFO_2|mem[14][6] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.330     ;
+; -9.595 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[5][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.324     ;
+; -9.593 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[3][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.322     ;
+; -9.584 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[0][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.313     ;
+; -9.582 ; router_fifo:FIFO_2|wr_ptr[0] ; router_fifo:FIFO_2|mem[2][2]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.311     ;
+; -9.576 ; router_fifo:FIFO_2|wr_ptr[0] ; router_fifo:FIFO_2|mem[1][2]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.305     ;
+; -9.574 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[8][1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.303     ;
+; -9.574 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[4][1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.303     ;
+; -9.558 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[0][1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.287     ;
+; -9.558 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[12][1] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.287     ;
+; -9.552 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[1][1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.281     ;
+; -9.552 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[13][1] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.281     ;
+; -9.544 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[12][5] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.273     ;
+; -9.542 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[0][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.271     ;
+; -9.532 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[13][0] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.261     ;
+; -9.531 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[14][0] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.260     ;
+; -9.508 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[8][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.237     ;
+; -9.507 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[15][5] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.236     ;
+; -9.506 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[4][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.235     ;
+; -9.505 ; router_fifo:FIFO_2|wr_ptr[1] ; router_fifo:FIFO_2|mem[11][2] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.234     ;
+; -9.503 ; router_fifo:FIFO_2|wr_ptr[1] ; router_fifo:FIFO_2|mem[3][2]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.232     ;
+; -9.502 ; router_fifo:FIFO_1|wr_ptr[3] ; router_fifo:FIFO_1|mem[12][3] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.231     ;
+; -9.502 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[3][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.231     ;
+; -9.500 ; router_fifo:FIFO_1|wr_ptr[3] ; router_fifo:FIFO_1|mem[8][3]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.229     ;
+; -9.494 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[2][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.223     ;
+; -9.492 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[1][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.221     ;
+; -9.491 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[11][0] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.220     ;
+; -9.490 ; router_fifo:FIFO_1|rd_ptr[0] ; router_reg:REG|ip[3]          ; clock        ; clock       ; 1.000        ; 0.000      ; 10.219     ;
+; -9.482 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[6][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.211     ;
+; -9.478 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[7][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.207     ;
+; -9.473 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[5][1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.202     ;
+; -9.473 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[4][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.202     ;
+; -9.468 ; router_fifo:FIFO_0|wr_ptr[0] ; router_fifo:FIFO_0|mem[12][5] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.197     ;
+; -9.466 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[9][1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.195     ;
+; -9.466 ; router_fifo:FIFO_0|wr_ptr[0] ; router_fifo:FIFO_0|mem[0][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.195     ;
+; -9.459 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[3][1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.188     ;
+; -9.456 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[8][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.185     ;
+; -9.456 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[15][1] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.185     ;
+; -9.455 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[5][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.184     ;
+; -9.454 ; router_fifo:FIFO_0|rd_ptr[2] ; router_fifo:FIFO_0|mem[12][5] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.183     ;
+; -9.453 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[3][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.182     ;
+; -9.452 ; router_fifo:FIFO_0|rd_ptr[2] ; router_fifo:FIFO_0|mem[0][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.181     ;
+; -9.450 ; router_fifo:FIFO_0|wr_ptr[3] ; router_fifo:FIFO_0|mem[9][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.179     ;
+; -9.444 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[0][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.173     ;
+; -9.434 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[8][1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.163     ;
+; -9.434 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[4][1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.163     ;
+; -9.432 ; router_fifo:FIFO_0|wr_ptr[0] ; router_fifo:FIFO_0|mem[8][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.161     ;
+; -9.431 ; router_fifo:FIFO_0|wr_ptr[0] ; router_fifo:FIFO_0|mem[15][5] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.160     ;
+; -9.430 ; router_fifo:FIFO_0|wr_ptr[0] ; router_fifo:FIFO_0|mem[4][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.159     ;
+; -9.428 ; router_fifo:FIFO_1|wr_ptr[0] ; router_fifo:FIFO_1|mem[15][6] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.157     ;
+; -9.426 ; router_fifo:FIFO_0|wr_ptr[0] ; router_fifo:FIFO_0|mem[3][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.155     ;
+; -9.426 ; router_fifo:FIFO_2|wr_ptr[0] ; router_fifo:FIFO_2|mem[11][2] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.155     ;
+; -9.424 ; router_fifo:FIFO_1|wr_ptr[3] ; router_fifo:FIFO_1|mem[0][3]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.153     ;
+; -9.424 ; router_fifo:FIFO_2|wr_ptr[0] ; router_fifo:FIFO_2|mem[3][2]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.153     ;
+; -9.421 ; router_fifo:FIFO_1|wr_ptr[3] ; router_fifo:FIFO_1|mem[4][3]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.150     ;
+; -9.420 ; router_fifo:FIFO_1|wr_ptr[0] ; router_fifo:FIFO_1|mem[3][6]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.149     ;
+; -9.418 ; router_fifo:FIFO_0|rd_ptr[2] ; router_fifo:FIFO_0|mem[8][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.147     ;
+; -9.418 ; router_fifo:FIFO_0|wr_ptr[0] ; router_fifo:FIFO_0|mem[2][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.147     ;
+; -9.418 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[0][1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.147     ;
+; -9.418 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[12][1] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.147     ;
+; -9.417 ; router_fifo:FIFO_0|rd_ptr[2] ; router_fifo:FIFO_0|mem[15][5] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.146     ;
+; -9.416 ; router_fifo:FIFO_0|rd_ptr[2] ; router_fifo:FIFO_0|mem[4][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.145     ;
+; -9.416 ; router_fifo:FIFO_0|wr_ptr[0] ; router_fifo:FIFO_0|mem[1][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.145     ;
+; -9.415 ; router_fifo:FIFO_0|wr_ptr[0] ; router_fifo:FIFO_0|mem[11][0] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.144     ;
+; -9.414 ; router_fifo:FIFO_1|wr_ptr[0] ; router_fifo:FIFO_1|mem[14][6] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.143     ;
+; -9.412 ; router_fifo:FIFO_0|rd_ptr[2] ; router_fifo:FIFO_0|mem[3][5]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.141     ;
+; -9.412 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[1][1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.141     ;
+; -9.412 ; router_fifo:FIFO_0|wr_ptr[2] ; router_fifo:FIFO_0|mem[13][1] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.141     ;
+; -9.411 ; router_fifo:FIFO_1|wr_ptr[0] ; router_fifo:FIFO_1|mem[1][6]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.140     ;
+; -9.406 ; router_fifo:FIFO_0|wr_ptr[0] ; router_fifo:FIFO_0|mem[6][0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 10.135     ;
+; -9.405 ; router_fifo:FIFO_1|mem[1][3] ; router_fifo:FIFO_1|mem[10][3] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.134     ;
+; -9.404 ; router_fifo:FIFO_1|mem[1][3] ; router_fifo:FIFO_1|mem[14][3] ; clock        ; clock       ; 1.000        ; 0.000      ; 10.133     ;
++--------+------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clock'                                                                                                                                      ;
++-------+--------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.348 ; router_sync:SYNC|count_rst1[4] ; router_sync:SYNC|count_rst1[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.527      ;
+; 1.368 ; router_fifo:FIFO_2|rd_ptr[4]   ; router_fifo:FIFO_2|rd_ptr[4]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.547      ;
+; 1.557 ; router_reg:REG|low_pkt_valid   ; router_reg:REG|low_pkt_valid        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.736      ;
+; 1.579 ; router_reg:REG|parity_done     ; router_reg:REG|parity_done          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.758      ;
+; 1.585 ; router_reg:REG|parity_done     ; router_reg:REG|err                  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.764      ;
+; 1.585 ; router_fsm:FSM|state.WTE       ; router_fsm:FSM|state.WTE            ; clock        ; clock       ; 0.000        ; 0.000      ; 1.764      ;
+; 1.587 ; router_fsm:FSM|state.LP        ; router_fsm:FSM|state.CPE            ; clock        ; clock       ; 0.000        ; 0.000      ; 1.766      ;
+; 1.646 ; router_fifo:FIFO_2|wr_ptr[4]   ; router_fifo:FIFO_2|wr_ptr[4]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.825      ;
+; 1.712 ; router_fifo:FIFO_0|rd_ptr[0]   ; router_fifo:FIFO_0|rd_ptr[0]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.891      ;
+; 1.712 ; router_fifo:FIFO_1|rd_ptr[0]   ; router_fifo:FIFO_1|rd_ptr[0]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.891      ;
+; 1.720 ; router_fifo:FIFO_0|rd_ptr[1]   ; router_fifo:FIFO_0|rd_ptr[1]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; router_fifo:FIFO_0|rd_ptr[2]   ; router_fifo:FIFO_0|rd_ptr[2]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; router_fifo:FIFO_1|rd_ptr[1]   ; router_fifo:FIFO_1|rd_ptr[1]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; router_fifo:FIFO_1|rd_ptr[2]   ; router_fifo:FIFO_1|rd_ptr[2]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.899      ;
+; 1.729 ; router_sync:SYNC|count_rst1[2] ; router_sync:SYNC|count_rst1[2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.908      ;
+; 1.733 ; router_fifo:FIFO_0|wr_ptr[0]   ; router_fifo:FIFO_0|wr_ptr[0]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.912      ;
+; 1.734 ; router_fifo:FIFO_0|counter[6]  ; router_fifo:FIFO_0|counter[6]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.913      ;
+; 1.734 ; router_fifo:FIFO_1|counter[6]  ; router_fifo:FIFO_1|counter[6]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.913      ;
+; 1.734 ; router_sync:SYNC|count_rst0[0] ; router_sync:SYNC|count_rst0[0]      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.913      ;
+; 1.734 ; router_sync:SYNC|count_rst2[0] ; router_sync:SYNC|count_rst2[0]      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.913      ;
+; 1.735 ; router_fifo:FIFO_2|rd_ptr[2]   ; router_fifo:FIFO_2|rd_ptr[2]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.914      ;
+; 1.740 ; router_fifo:FIFO_2|wr_ptr[0]   ; router_fifo:FIFO_2|wr_ptr[0]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.919      ;
+; 1.741 ; router_fifo:FIFO_1|counter[1]  ; router_fifo:FIFO_1|counter[1]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.920      ;
+; 1.742 ; router_fifo:FIFO_1|counter[0]  ; router_fifo:FIFO_1|counter[0]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.921      ;
+; 1.743 ; router_fifo:FIFO_2|counter[6]  ; router_fifo:FIFO_2|counter[6]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.922      ;
+; 1.746 ; router_fifo:FIFO_1|wr_ptr[0]   ; router_fifo:FIFO_1|wr_ptr[0]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.925      ;
+; 1.747 ; router_fifo:FIFO_0|wr_ptr[1]   ; router_fifo:FIFO_0|wr_ptr[1]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.926      ;
+; 1.748 ; router_fifo:FIFO_0|counter[1]  ; router_fifo:FIFO_0|counter[1]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.927      ;
+; 1.748 ; router_fifo:FIFO_2|counter[1]  ; router_fifo:FIFO_2|counter[1]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.927      ;
+; 1.748 ; router_sync:SYNC|count_rst0[1] ; router_sync:SYNC|count_rst0[1]      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.927      ;
+; 1.748 ; router_sync:SYNC|count_rst0[2] ; router_sync:SYNC|count_rst0[2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.927      ;
+; 1.748 ; router_sync:SYNC|count_rst2[1] ; router_sync:SYNC|count_rst2[1]      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.927      ;
+; 1.748 ; router_sync:SYNC|count_rst2[2] ; router_sync:SYNC|count_rst2[2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.927      ;
+; 1.749 ; router_fifo:FIFO_0|wr_ptr[2]   ; router_fifo:FIFO_0|wr_ptr[2]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.928      ;
+; 1.749 ; router_fifo:FIFO_0|counter[0]  ; router_fifo:FIFO_0|counter[0]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.928      ;
+; 1.749 ; router_fifo:FIFO_2|counter[0]  ; router_fifo:FIFO_2|counter[0]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.928      ;
+; 1.753 ; router_fifo:FIFO_1|wr_ptr[1]   ; router_fifo:FIFO_1|wr_ptr[1]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.932      ;
+; 1.754 ; router_fifo:FIFO_1|wr_ptr[2]   ; router_fifo:FIFO_1|wr_ptr[2]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.933      ;
+; 1.765 ; router_fifo:FIFO_2|wr_ptr[1]   ; router_fifo:FIFO_2|wr_ptr[1]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.944      ;
+; 1.768 ; router_fifo:FIFO_2|wr_ptr[2]   ; router_fifo:FIFO_2|wr_ptr[2]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.947      ;
+; 1.782 ; router_fsm:FSM|state.DA        ; router_reg:REG|parity_done          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.961      ;
+; 1.797 ; router_fifo:FIFO_0|rd_ptr[3]   ; router_fifo:FIFO_0|rd_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.976      ;
+; 1.797 ; router_fifo:FIFO_0|wr_ptr[4]   ; router_fifo:FIFO_0|wr_ptr[4]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.976      ;
+; 1.797 ; router_fifo:FIFO_0|rd_ptr[4]   ; router_fifo:FIFO_0|rd_ptr[4]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.976      ;
+; 1.797 ; router_fifo:FIFO_1|rd_ptr[3]   ; router_fifo:FIFO_1|rd_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.976      ;
+; 1.797 ; router_fifo:FIFO_1|rd_ptr[4]   ; router_fifo:FIFO_1|rd_ptr[4]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.976      ;
+; 1.797 ; router_reg:REG|err             ; router_reg:REG|err                  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.976      ;
+; 1.814 ; router_fifo:FIFO_0|wr_ptr[3]   ; router_fifo:FIFO_0|wr_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.993      ;
+; 1.814 ; router_fifo:FIFO_1|wr_ptr[3]   ; router_fifo:FIFO_1|wr_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 1.993      ;
+; 1.814 ; router_sync:SYNC|count_rst0[3] ; router_sync:SYNC|count_rst0[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.993      ;
+; 1.821 ; router_fifo:FIFO_2|rd_ptr[3]   ; router_fifo:FIFO_2|rd_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.000      ;
+; 1.821 ; router_fifo:FIFO_0|counter[2]  ; router_fifo:FIFO_0|counter[2]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.000      ;
+; 1.821 ; router_fifo:FIFO_1|counter[2]  ; router_fifo:FIFO_1|counter[2]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.000      ;
+; 1.821 ; router_fifo:FIFO_2|counter[2]  ; router_fifo:FIFO_2|counter[2]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.000      ;
+; 1.821 ; router_sync:SYNC|count_rst0[4] ; router_sync:SYNC|count_rst0[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.000      ;
+; 1.821 ; router_sync:SYNC|count_rst1[3] ; router_sync:SYNC|count_rst1[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.000      ;
+; 1.821 ; router_sync:SYNC|count_rst2[4] ; router_sync:SYNC|count_rst2[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.000      ;
+; 1.826 ; router_fifo:FIFO_2|rd_ptr[1]   ; router_fifo:FIFO_2|rd_ptr[1]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.005      ;
+; 1.831 ; router_fifo:FIFO_1|wr_ptr[4]   ; router_fifo:FIFO_1|wr_ptr[4]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.010      ;
+; 1.834 ; router_sync:SYNC|count_rst1[1] ; router_sync:SYNC|count_rst1[1]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.013      ;
+; 1.835 ; router_fifo:FIFO_2|rd_ptr[0]   ; router_fifo:FIFO_2|rd_ptr[0]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.014      ;
+; 1.835 ; router_sync:SYNC|count_rst1[0] ; router_sync:SYNC|count_rst1[0]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.014      ;
+; 1.838 ; router_fifo:FIFO_2|wr_ptr[3]   ; router_fifo:FIFO_2|wr_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.017      ;
+; 1.840 ; router_fsm:FSM|state.FFS       ; router_fsm:FSM|state.LAF            ; clock        ; clock       ; 0.000        ; 0.000      ; 2.019      ;
+; 1.843 ; router_fifo:FIFO_0|counter[4]  ; router_fifo:FIFO_0|counter[4]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.022      ;
+; 1.843 ; router_fifo:FIFO_1|counter[4]  ; router_fifo:FIFO_1|counter[4]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.022      ;
+; 1.846 ; router_fifo:FIFO_0|counter[3]  ; router_fifo:FIFO_0|counter[3]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.025      ;
+; 1.846 ; router_fifo:FIFO_0|counter[5]  ; router_fifo:FIFO_0|counter[5]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.025      ;
+; 1.846 ; router_fifo:FIFO_1|counter[3]  ; router_fifo:FIFO_1|counter[3]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.025      ;
+; 1.846 ; router_fifo:FIFO_1|counter[5]  ; router_fifo:FIFO_1|counter[5]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.025      ;
+; 1.846 ; router_fifo:FIFO_2|counter[3]  ; router_fifo:FIFO_2|counter[3]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.025      ;
+; 1.846 ; router_fifo:FIFO_2|counter[4]  ; router_fifo:FIFO_2|counter[4]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.025      ;
+; 1.846 ; router_fifo:FIFO_2|counter[5]  ; router_fifo:FIFO_2|counter[5]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.025      ;
+; 1.910 ; router_fsm:FSM|state.LD        ; router_fsm:FSM|state.FFS            ; clock        ; clock       ; 0.000        ; 0.000      ; 2.089      ;
+; 2.010 ; router_reg:REG|ffs[0]          ; router_reg:REG|ip[0]                ; clock        ; clock       ; 0.000        ; 0.000      ; 2.189      ;
+; 2.011 ; router_reg:REG|ffs[1]          ; router_reg:REG|ip[1]                ; clock        ; clock       ; 0.000        ; 0.000      ; 2.190      ;
+; 2.017 ; router_reg:REG|hb[1]           ; router_reg:REG|dout[1]              ; clock        ; clock       ; 0.000        ; 0.000      ; 2.196      ;
+; 2.038 ; router_reg:REG|hb[3]           ; router_reg:REG|dout[3]              ; clock        ; clock       ; 0.000        ; 0.000      ; 2.217      ;
+; 2.052 ; router_sync:SYNC|soft_reset_2  ; router_fifo:FIFO_2|data_out[0]~en   ; clock        ; clock       ; 0.000        ; 0.000      ; 2.231      ;
+; 2.068 ; router_reg:REG|hb[5]           ; router_reg:REG|dout[5]              ; clock        ; clock       ; 0.000        ; 0.000      ; 2.247      ;
+; 2.074 ; router_reg:REG|dout[2]         ; router_fifo:FIFO_2|counter[0]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.253      ;
+; 2.089 ; router_fsm:FSM|state.DA        ; router_fsm:FSM|state.LFD            ; clock        ; clock       ; 0.000        ; 0.000      ; 2.268      ;
+; 2.123 ; router_reg:REG|hb[2]           ; router_reg:REG|dout[2]              ; clock        ; clock       ; 0.000        ; 0.000      ; 2.302      ;
+; 2.134 ; router_reg:REG|hb[4]           ; router_reg:REG|dout[4]              ; clock        ; clock       ; 0.000        ; 0.000      ; 2.313      ;
+; 2.185 ; router_sync:SYNC|count_rst2[3] ; router_sync:SYNC|count_rst2[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.364      ;
+; 2.231 ; router_fsm:FSM|state.WTE       ; router_fsm:FSM|state.LFD            ; clock        ; clock       ; 0.000        ; 0.000      ; 2.410      ;
+; 2.249 ; router_fsm:FSM|state.DA        ; router_fsm:FSM|state.WTE            ; clock        ; clock       ; 0.000        ; 0.000      ; 2.428      ;
+; 2.366 ; router_fifo:FIFO_1|mem[11][0]  ; router_fifo:FIFO_1|mem[10][0]       ; clock        ; clock       ; 0.000        ; 0.000      ; 2.545      ;
+; 2.383 ; router_reg:REG|hb[7]           ; router_reg:REG|dout[7]              ; clock        ; clock       ; 0.000        ; 0.000      ; 2.562      ;
+; 2.388 ; router_fifo:FIFO_0|rd_ptr[0]   ; router_fifo:FIFO_0|rd_ptr[1]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.567      ;
+; 2.388 ; router_fifo:FIFO_1|rd_ptr[0]   ; router_fifo:FIFO_1|rd_ptr[1]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.567      ;
+; 2.390 ; router_fifo:FIFO_2|mem[13][7]  ; router_fifo:FIFO_2|mem[5][7]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.569      ;
+; 2.396 ; router_fifo:FIFO_0|rd_ptr[2]   ; router_fifo:FIFO_0|rd_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; router_fifo:FIFO_0|rd_ptr[1]   ; router_fifo:FIFO_0|rd_ptr[2]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; router_fifo:FIFO_1|rd_ptr[2]   ; router_fifo:FIFO_1|rd_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; router_fifo:FIFO_1|rd_ptr[1]   ; router_fifo:FIFO_1|rd_ptr[2]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.575      ;
+; 2.400 ; router_fifo:FIFO_0|mem[15][0]  ; router_fifo:FIFO_0|data_out[0]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 2.579      ;
+; 2.405 ; router_sync:SYNC|count_rst1[2] ; router_sync:SYNC|count_rst1[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.584      ;
+; 2.409 ; router_fifo:FIFO_0|wr_ptr[0]   ; router_fifo:FIFO_0|wr_ptr[1]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.588      ;
+; 2.410 ; router_sync:SYNC|count_rst0[0] ; router_sync:SYNC|count_rst0[1]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.589      ;
++-------+--------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 25665    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 25665    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 13    ; 13   ;
+; Unconstrained Input Port Paths  ; 762   ; 762  ;
+; Unconstrained Output Ports      ; 29    ; 29   ;
+; Unconstrained Output Port Paths ; 81    ; 81   ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clock  ; clock ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; data_in[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pkt_valid  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; read_enb_0 ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; read_enb_1 ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; read_enb_2 ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; resetn     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; busy          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; error         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; valid_out_0   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; valid_out_1   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; valid_out_2   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; data_in[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pkt_valid  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; read_enb_0 ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; read_enb_1 ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; read_enb_2 ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; resetn     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; busy          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_0[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_1[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out_2[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; error         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; valid_out_0   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; valid_out_1   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; valid_out_2   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Tue May 24 00:16:22 2022
+Info: Command: quartus_sta router_top -c router_top
+Info: qsta_default_script.tcl version: #3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'router_top.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -9.798
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -9.798           -4567.466 clock 
+Info (332146): Worst-case hold slack is 1.348
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.348               0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4680 megabytes
+    Info: Processing ended: Tue May 24 00:16:25 2022
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
