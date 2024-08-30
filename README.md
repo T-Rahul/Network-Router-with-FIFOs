@@ -5,5 +5,5 @@
 
 # Block-level Architecture
 
-!(https://github.com/T-Rahul/Router-1x3-RTL-design/blob/a6c861801ace99356e3a5a16a91d37ec1b8d5530/router_architecture.jpg)
+![plot](https://github.com/T-Rahul/Router-1x3-RTL-design/blob/a6c861801ace99356e3a5a16a91d37ec1b8d5530/router_architecture.jpg)
 
