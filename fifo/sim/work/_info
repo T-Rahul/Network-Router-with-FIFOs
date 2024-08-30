@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/17.1
+vrouter_fifo
+!s110 1651385790
+!i10b 1
+!s100 2PBUL`WE`WP@03LYkRKJb1
+IJ2m`FXi:[4Z8RDeK]f1f72
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 dC:/Users/T Rahul/Advanced VLSI Design and Verification/project/fifo/sim
+w1651385771
+8C:/Users/T Rahul/Advanced VLSI Design and Verification/project/router_fifo.v
+FC:/Users/T Rahul/Advanced VLSI Design and Verification/project/router_fifo.v
+L0 1
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1651385790.000000
+!s107 C:/Users/T Rahul/Advanced VLSI Design and Verification/project/router_fifo.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/T Rahul/Advanced VLSI Design and Verification/project/router_fifo.v|
+!i113 1
+Z3 o-work work
+Z4 tCvgOpt 0
+vrouter_fifo_tb
+!s110 1651386589
+!i10b 1
+!s100 7i3Qm[aD4]c@4F9G@T@4c1
+ICYg;WBkR@C2LZf]<AUl?m0
+R0
+R1
+w1651386585
+8C:/Users/T Rahul/Advanced VLSI Design and Verification/project/router_fifo_tb.v
+FC:/Users/T Rahul/Advanced VLSI Design and Verification/project/router_fifo_tb.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1651386589.000000
+!s107 C:/Users/T Rahul/Advanced VLSI Design and Verification/project/router_fifo_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/T Rahul/Advanced VLSI Design and Verification/project/router_fifo_tb.v|
+!i113 1
+R3
+R4
+vrouter_top_tb
+!s110 1651394663
+!i10b 1
+!s100 EkzEXP9;BHFPznY1C]NDA1
+I?S?IPh53zI`nI4N>_oY9?3
+R0
+R1
+w1651394660
+8C:/Users/T Rahul/Advanced VLSI Design and Verification/project/top/rtl/router_top_tb.v
+FC:/Users/T Rahul/Advanced VLSI Design and Verification/project/top/rtl/router_top_tb.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1651394663.000000
+!s107 C:/Users/T Rahul/Advanced VLSI Design and Verification/project/top/rtl/router_top_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/T Rahul/Advanced VLSI Design and Verification/project/top/rtl/router_top_tb.v|
+!i113 1
+R3
+R4
